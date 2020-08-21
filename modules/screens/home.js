@@ -23,10 +23,12 @@ export default class Home extends React.Component{
                      colors={['#87cefa', '#3b5998','#192f6a']}
                      style={styles.LinearGradient}>
 
-
-                <TouchableOpacity>
+               <View style={styles.Options}>
+               <TouchableOpacity>
                      <Icons style={styles.Options} name="options" size={20} color="#900" onPress={()=> this.props.navigation.navigate('Forget')}/>
-                </TouchableOpacity>      
+                </TouchableOpacity>  
+               </View>
+                   
              
                 <View style={styles.iconView}>
                      <Icon name="user" size={30} color="#900"/>
@@ -171,6 +173,6 @@ const styles = StyleSheet.create({
                      },
 
                     Options: {
-                   
+                   marginLeft:10,
                     },
                     });

@@ -2,10 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Button,Image,Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-
-
-
-
 export default class Forget extends React.Component{
 
      
@@ -20,7 +16,7 @@ export default class Forget extends React.Component{
                      <Button 
                          title="Button" 
                          color="#192f6a"
-                         onPress={()=> this.props.navigation.navigate('Home')}>
+                         onPress={()=> this.props.navigation.navigate('Lifecycle')}>
                      </Button>
                 </View>
 
@@ -47,6 +43,18 @@ export default class Forget extends React.Component{
                        <Text style={styles.text}>3</Text>
                     </View>
                 </View>
+                
+                
+                <React.Fragment>
+                   <View style={styles.container}>
+                     <Text> Layouts</Text>                    
+                     </View>
+                     <View style={{flex:1,marginTop:22, backgroundColor:'blue'}}>
+                         <Text>
+                             
+                         </Text>
+                     </View>
+                </React.Fragment>
                
                 </LinearGradient>
 
@@ -133,5 +141,8 @@ export default class Forget extends React.Component{
                     height: 100,
                     backgroundColor: 'green'
                   },
+                  container:{
+                    backgroundColor: 'red',                   
+                },
     });
 

@@ -12,6 +12,7 @@ import Forget from './modules/screens/forget';
 import Home from './modules/screens/home';
 import Drawer from './modules/screens/home';
 import Details from './modules/screens/details';
+import Lifecycle from './modules/screens/details';
 import Navigation from './modules/navigation/rootNavigator';
 import { createStackNavigator } from 'react-navigation-stack';
 

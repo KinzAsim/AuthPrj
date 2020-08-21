@@ -4,6 +4,7 @@ import Home from '../screens/home';
 import Details from '../screens/details';
 import Forget from '../screens/forget';
 import Drawer from '../screens/drawer';
+import Lifecycle from '../screens/lifecycle';
 
 const App_Stack = createStackNavigator({
     Home: {
@@ -18,6 +19,9 @@ const App_Stack = createStackNavigator({
     },
     Drawer: {
         screen: Drawer
+    },
+    Lifecycle: {
+        screen: Lifecycle
     },
 },
 {
