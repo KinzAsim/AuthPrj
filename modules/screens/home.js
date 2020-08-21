@@ -2,7 +2,8 @@ import React from 'react';
 import{ StyleSheet, View, Text,TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Entypo';
-import TextInput from 'react-native-textinput-with-icons'
+import TextInput from 'react-native-textinput-with-icons';
+import Icons from 'react-native-vector-icons/Ionicons';
 
 
 export default class Home extends React.Component{
@@ -22,7 +23,11 @@ export default class Home extends React.Component{
                      colors={['#87cefa', '#3b5998','#192f6a']}
                      style={styles.LinearGradient}>
 
-            
+
+                <TouchableOpacity>
+                     <Icons style={styles.Options} name="options" size={20} color="#900" onPress={()=> this.props.navigation.navigate('Forget')}/>
+                </TouchableOpacity>      
+             
                 <View style={styles.iconView}>
                      <Icon name="user" size={30} color="#900"/>
                 </View>
@@ -54,18 +59,27 @@ export default class Home extends React.Component{
                     />
                  </View>
 
-                 <TouchableOpacity style={styles.ButtonStyle} >
+                  <TouchableOpacity style={styles.textStyle} >
+                     <Text style={{fontWeight:'bold', fontSize: 15}} onPress={()=> this.props.navigation.navigate('Forget')}>Forgotten Password?
+                     </Text>
+                  </TouchableOpacity>
+
+
+
+                  <TouchableOpacity style={styles.ButtonStyle} >
                     <Text style={{fontWeight:'bold',fontSize: 15}} onPress={()=> this.props.navigation.navigate('Details')}>LOGIN</Text>
-                 </TouchableOpacity>
+                  </TouchableOpacity>
 
 
-                 <Text style={styles.textStyle}>
-                    Forgotten Password?
-                 </Text>
-         
-       
-        
-                  </LinearGradient>
+                  <TouchableOpacity style={styles.textStyle} >
+                     <Text style={{fontWeight:'bold', fontSize: 15}} onPress={()=> this.props.navigation.navigate('Forget')}>Signup
+                     </Text>
+                  </TouchableOpacity>
+                 
+                  
+                   
+                </LinearGradient>
+
              );
          }}
 
@@ -154,13 +168,9 @@ const styles = StyleSheet.create({
 
                     textStyle: {
                       marginTop:20,
+                     },
 
-                     }
-     
-      },
-      
-    );
-    
- 
-   
-
+                    Options: {
+                   
+                    },
+                    });

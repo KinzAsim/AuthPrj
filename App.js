@@ -7,9 +7,10 @@
  */
 
 import React from 'react';
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet,View } from 'react-native';
+import Forget from './modules/screens/forget';
 import Home from './modules/screens/home';
+import Drawer from './modules/screens/home';
 import Details from './modules/screens/details';
 import Navigation from './modules/navigation/rootNavigator';
 import { createStackNavigator } from 'react-navigation-stack';

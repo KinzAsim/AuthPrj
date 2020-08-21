@@ -1,7 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Button, TextInput, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Entypo';
+import TextInput from 'react-native-textinput-with-icons';
+
+
 
 export default class Details extends React.Component{
     
@@ -15,34 +18,34 @@ export default class Details extends React.Component{
     }
 
     static navigationOptions = {
-      title: 'REGISTER',
-    };
+      title: 'REGISTER'}
+  
 
     render(){
         return(
 
-            <LinearGradient
+              <LinearGradient
                  colors={['#87cefa', '#3b5998','#192f6a']}
                  style={styles.LinearGradient}>
-
-
+             
               <View style={styles.iconView}>
-                 <Icon name="add-user" size={15} color="#900"/>
+                 <Icon name="add-user" size={30} color="#900"/>
               </View>
 
-              <View style={styles.View}>
-              
+              <View style={styles.View}>              
               <TextInput
                  onChangeText={(text) => console.log(text)}
+                 //value={this.state.userName}
+                // onChangeText={userName => this.setState({ username })}
                  placeholder="Enter your name"
-                 style={{ height: 40, 
+                 style={{ height: 40,                  
                    borderColor: 'black', 
                    borderWidth: 2,
                    marginTop:320,
                    marginLeft:50, 
                    marginRight:50,
                    borderRadius:20, 
-                   backgroundColor:'white', 
+                   backgroundColor:'white',
                    alignItems:'center' }}
                />
 
@@ -65,8 +68,8 @@ export default class Details extends React.Component{
                   onChangeText={(text) => console.log(text)}
                   placeholder="Enter your password"
                   style={{ height: 40,
-                     borderColor: 'black',
-                     borderWidth: 2,
+                     borderColor: 'white',
+                     borderWidth: 5,
                      marginTop:10,
                      marginLeft:50, 
                      marginRight:50,
@@ -75,12 +78,12 @@ export default class Details extends React.Component{
                      alignItems:'center',
                      }}
                 />
-
+              </View>
                <TouchableOpacity style={styles.btnColor} >
                    <Text style={{fontWeight:'bold',fontSize: 15}} onPress={()=> this.props.navigation.navigate('Home')}>Go Back To Login</Text>
                </TouchableOpacity>
 
-            </View>
+            
             </LinearGradient>
         );
     }
@@ -92,7 +95,9 @@ const styles = StyleSheet.create({
               flex:1,
               justifyContent: 'center',
               alignItems: 'center',
-              backgroundColor: '#3b5998',
+              backgroundColor: '#ffff',
+              
+              
               },
 
              LinearGradient: {
@@ -125,20 +130,26 @@ const styles = StyleSheet.create({
              btnColor: {
               justifyContent:'center',
               alignSelf:'center', 
+
               marginTop:30,
               backgroundColor:'#fff',
               width:150,
               height:40,
               alignItems:'center',
-              borderRadius:20},
+              borderRadius:20
+            },
 
-              iconView: {
+             iconView: {
                 width: 50,
                 height: 200,
                 alignSelf:'center',
                 justifyContent:'center',
                 alignItems:'center',
            
+              },
+
+              Profile: {
+                marginTop:10,
               },
       }
     );
