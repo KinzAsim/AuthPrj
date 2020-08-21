@@ -4,47 +4,60 @@ import {View, Button, Text} from 'react-native';
 
 
 export default class Lifecycle extends React.Component{
-
-         constructor(props){
-             super(props);
+             constructor(){
+             super();
              this.state={
-                 data:[]
-             }
-             console.log('constructor')
-         }
+             data:"ABC",
+             evil:"DEF"
+          
+             
+        }
+    }
+    
+
+         //saySomething = (something) =>{            
+            /*console.log(something)
+             }*/
+            
+
+         
          copmonentDidMount()
          {
-            fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => response.json())
-            .then((data) => console.log(data))
+           this.setState("component did mount");
+         
              //geolocation
              //fetch API
-
-
          }
-         componentDidUpdate(props,state)
+         componentDidUpdate()
          {
-             console.log('componentDidUpdate')
+            console.log(this.state)
              return true;
              //on furure loads
          }
-
+         
          /*componentWillMount(){
              //component is leaving the screen
          }*/
-
-
+         
+        handleClick = () => {
+            this.setState({
+              data:"ABC",
+              evil:"DEF"
+              
+            });
+        }
 
     render(){
-        console.log("render")
+      
         return(
             <View>
                <Text> LifeCycle Methods</Text>
+               <Text>{this.state.data}</Text> 
                <Button
                    title="Update me"
-                   onPress={()=>{this.setState({data:"update"})}}>  
-                   
+                   onPress={()=>this.handleClick()}>
                </Button>
+               
             </View>
         );
     }
