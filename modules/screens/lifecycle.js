@@ -17,10 +17,9 @@ export default class Lifecycle extends React.Component{
                 
          copmonentDidMount()
          {
-           this.setState();
-         
-             //geolocation
-             //fetch API
+           this.setState();        
+             //geolocation //fetch API
+             
          }
          componentDidUpdate()
          {
@@ -33,7 +32,6 @@ export default class Lifecycle extends React.Component{
              clearInterval(this.interval);
              //component is leaving the screen
          }
-
          
         Addition = () => {
             this.setState({
@@ -55,10 +53,7 @@ export default class Lifecycle extends React.Component{
              });
          }
 
-    render(){
-             
-                  
-
+    render(){                               
         return(
             <LinearGradient
                      colors={['#87cefa', '#3b5998','#192f6a']}
@@ -93,19 +88,23 @@ export default class Lifecycle extends React.Component{
                           title='Press Me'>
                           onPress={this.changeImage}  
                 </Button>    
-                </View>
+            </View>
                          
               
            
            
          
             <View style={styles.new}>                  
-                   <View style={{width:200, height:100, backgroundColor:'powderblue'}}></View>
-                   <View style={{width:200, height:100, backgroundColor:'steelblue'}}>
-                   <View style={{width:50, height:20, backgroundColor:'blue',marginTop:10}}></View>
+                   <View style={{width:200, height:100, backgroundColor:'powderblue'}}>
+                   <View style={styles.circle}></View>    
                    </View>
+
+                   <View style={{width:200, height:100, backgroundColor:'steelblue'}}>
+                   <View style={styles.rectangle}></View>
+                   </View>
+
                    <View style={{width:200, height:100, backgroundColor:'skyblue'}}>
-                   <View style={{width:50, height:20, backgroundColor:'black', flex:1, borderRadius:300}}></View>
+                   <View style={{width:50, height:20, backgroundColor:'white', flex:1, borderRadius:300,marginBottom:10,marginTop:10}}></View>
                    </View>
             </View>
             </View>
@@ -132,14 +131,31 @@ const styles = StyleSheet.create({
                     marginLeft:50, 
                     marginTop:20,
                     alignItems:'center',
-                    justifyContent: 'center'                
+                    justifyContent: 'center',                
 
                  },
 
                  new: {
                     flex:1,
                     justifyContent:'space-between',
-                    flexDirection:'column',                                   
+                    flexDirection:'row',                                   
+                 },
+
+                 circle: {
+                    width:80, 
+                    height:80, 
+                    backgroundColor:'darkblue',
+                    borderRadius:100*2,
+                    marginTop:10
+                
+                 },
+
+                 rectangle: {
+                    width:50*2, 
+                    height:20, 
+                    backgroundColor:'blue',
+                    marginTop:10,
+                    marginLeft:50
                  },
 });
 
