@@ -24,8 +24,8 @@ export default class Home extends React.Component{
                      style={styles.LinearGradient}>
 
                <View style={styles.Options}>
-               <TouchableOpacity>
-                     <Icons style={styles.Options} name="options" size={20} color="#900" onPress={()=> this.props.navigation.navigate('Forget')}/>
+               <TouchableOpacity style={styles.Options}>
+                     <Icons  name="options" size={20} color="#900" onPress={()=> this.props.navigation.navigate('Forget')}/>
                 </TouchableOpacity>  
                </View>
                    
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
                      height:20,
                      width:100, 
                      borderWidth: 2,
-                     marginBottom:10, 
+                     marginBottom:200, 
                      alignItems:'center',
                      justifyContent:'center',
                      borderRadius:25, 
@@ -132,6 +132,7 @@ const styles = StyleSheet.create({
                       justifyContent:'center',
                       alignItems:'center',
                       flexDirection:'row',
+                      flex:1,
                       padding:10,
                       
                     },
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
                       shadowRadius:50,
                       justifyContent: 'center',
                       alignItems: 'center', 
+                      flexDirection:'row',
                       elevation: 5,
                       marginBottom: 50,
                     },
@@ -155,7 +157,7 @@ const styles = StyleSheet.create({
                     ButtonStyle: {
                       justifyContent:'center',
                       alignSelf:'center', 
-                      marginTop:30,
+                      marginBottom:50,
                       backgroundColor:'#fff',
                       width:100,
                       height:40,
@@ -169,10 +171,11 @@ const styles = StyleSheet.create({
                      },
 
                     textStyle: {
-                      marginTop:20,
+                      marginBottom:100,
                      },
 
-                    Options: {
-                   marginLeft:10,
+                    Options: {                     
+                      flexDirection:'row', 
+                      flex:1                                    
                     },
                     });

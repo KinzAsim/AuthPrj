@@ -1,5 +1,6 @@
 import React from'react';
 import {View, Button, Text, StyleSheet,Image,TouchableOpacity} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 
 
@@ -34,7 +35,7 @@ export default class Lifecycle extends React.Component{
          }
 
          
-        /*Addition = () => {
+        Addition = () => {
             this.setState({
                 count: this.state.count + 1
             });
@@ -45,9 +46,10 @@ export default class Lifecycle extends React.Component{
                 count: this.state.count - 1
             });
         }
-        */
+        
         changeImage = () => {
-             this.setState({
+            console.loglog("Image Changes");
+             this.setState({                
                  source: require('./../../assets/images/iot.jpg')
                  
              });
@@ -58,6 +60,10 @@ export default class Lifecycle extends React.Component{
                   
 
         return(
+            <LinearGradient
+                     colors={['#87cefa', '#3b5998','#192f6a']}
+                     style={styles.LinearGradient}>
+
             <View>
                <Text> LifeCycle Methods</Text>
                <Text>{this.state.count}</Text> 
@@ -81,8 +87,6 @@ export default class Lifecycle extends React.Component{
                           source = {this.state.source}                                                                
                 />
                 </TouchableOpacity>  
-
-
                
                 <Button
                           style={styles.btn1}
@@ -92,7 +96,21 @@ export default class Lifecycle extends React.Component{
                 </View>
                          
               
+           
+           
+         
+            <View style={styles.new}>                  
+                   <View style={{width:200, height:100, backgroundColor:'powderblue'}}></View>
+                   <View style={{width:200, height:100, backgroundColor:'steelblue'}}>
+                   <View style={{width:50, height:20, backgroundColor:'blue',marginTop:10}}></View>
+                   </View>
+                   <View style={{width:200, height:100, backgroundColor:'skyblue'}}>
+                   <View style={{width:50, height:20, backgroundColor:'black', flex:1, borderRadius:300}}></View>
+                   </View>
             </View>
+            </View>
+            </LinearGradient>
+
         );
     }
 }
@@ -106,6 +124,7 @@ const styles = StyleSheet.create({
                  
                  img: {
                      justifyContent: 'center'
+                     
                  },
 
                  btn1: {
@@ -115,6 +134,12 @@ const styles = StyleSheet.create({
                     alignItems:'center',
                     justifyContent: 'center'                
 
-                 }
+                 },
+
+                 new: {
+                    flex:1,
+                    justifyContent:'space-between',
+                    flexDirection:'column',                                   
+                 },
 });
 
