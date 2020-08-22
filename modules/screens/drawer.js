@@ -1,5 +1,4 @@
 import React from "react";
-import {Button,View,Header} from 'react-native';
 
 export default class Drawer extends React.Component {
   render() {
@@ -14,8 +13,10 @@ export default class Drawer extends React.Component {
                  </Left>
 
 
-          
-     
+         <Body>
+                <Title>HomeScreen</Title>            
+         </Body>   
+         <Right />
 
               </Header>
         </Container>

@@ -7,10 +7,8 @@ export default class Lifecycle extends React.Component{
              constructor(){
              super();
              this.state={
-             data:"ABC",
-             evil:"DEF"
-          
-             
+            count: ''
+                     
         }
     }
     
@@ -23,7 +21,7 @@ export default class Lifecycle extends React.Component{
          
          copmonentDidMount()
          {
-           this.setState("component did mount");
+           this.setState();
          
              //geolocation
              //fetch API
@@ -35,15 +33,21 @@ export default class Lifecycle extends React.Component{
              //on furure loads
          }
          
-         /*componentWillMount(){
+         componentWillUnmount(){
+             clearInterval(this.interval);
              //component is leaving the screen
-         }*/
+         }
+
          
         handleClick = () => {
             this.setState({
-              data:"ABC",
-              evil:"DEF"
-              
+             
+            });
+        }
+
+        mius = () => {
+            this.setState({
+
             });
         }
 
@@ -52,13 +56,22 @@ export default class Lifecycle extends React.Component{
         return(
             <View>
                <Text> LifeCycle Methods</Text>
-               <Text>{this.state.data}</Text> 
-               <Button
-                   title="Update me"
-                   onPress={()=>this.handleClick()}>
+               <Text>{this.state.count}</Text> 
+               <Button 
+                   title="Add"
+                   onPress={()=>this.setState({count: this.state.count + 1})}>
                </Button>
+
+               <Button 
+                   title="Subtract"
+                   onPress={()=>this.setState({count: this.state.count - 1})}>
+               </Button>
+
+
+
                
             </View>
         );
     }
 }
+

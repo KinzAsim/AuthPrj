@@ -19,9 +19,11 @@ const App_Stack = createStackNavigator({
     },
     Drawer: {
         screen: Drawer
+       
     },
     Lifecycle: {
         screen: Lifecycle
+       
     },
 },
 {
